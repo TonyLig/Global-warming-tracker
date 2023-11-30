@@ -1,20 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
 
-interface appState {
+export interface appState {
   value: number;
 }
 
-const initalState: appState = {
+const initialState: appState = {
   value: 0,
 };
 
 export const stateSlice = createSlice({
   name: "app",
-  initalState,
-  reducers: {},
+  initialState,
+  reducers: {
+    add: (state) => {
+      state.value += 1;
+    },
+  },
 });
 
-export const {} = stateSlice.actions;
+export const { add } = stateSlice.actions;
 
 export default stateSlice.reducer;
