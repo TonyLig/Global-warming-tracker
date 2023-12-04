@@ -8,7 +8,7 @@ export default function Banner() {
   const background: BannerLayer = {
     image: `${starrySky}`,
     translateY: [0, 50],
-    opacity: [1, 0.3],
+    opacity: [1, 0.7],
     scale: [1.05, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
   };
@@ -19,8 +19,10 @@ export default function Banner() {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="inset center">
-        <h1 className="headline white">Hello World!</h1>
+      <div className="flex justify-center">
+        <h1 className="font-sans font-light text-[50px] mt-36 text-white md:text-[80px] md:mt-28 ">
+          Global Warming
+        </h1>
       </div>
     ),
   };
@@ -28,7 +30,7 @@ export default function Banner() {
   const foreground: BannerLayer = {
     image: `${earth}`,
     translateY: [0, 15],
-    scale: [1, 1.1, "easeOutCubic"],
+    scale: [1, 1.5, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
   };
 
@@ -36,13 +38,15 @@ export default function Banner() {
     opacity: [0, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
-    children: <div className="gradient inset" />,
+    children: (
+      <div className="inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-white h-screen" />
+    ),
   };
 
   return (
     <ParallaxBanner
       layers={[background, headline, foreground, gradientOverlay]}
-      className="aspect-[3/2] bg-gray-900"
+      className="h-screen"
     />
   );
 }

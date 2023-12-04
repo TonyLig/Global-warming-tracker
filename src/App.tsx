@@ -7,7 +7,7 @@ export default function App() {
     <>
       <ParallaxProvider>
         <Banner />
-        <div className="center h-full">
+        <div className="h-screen flex items-center justify-center">
           <h1 className="headline gray">Goodnight.</h1>
         </div>
       </ParallaxProvider>
