@@ -3,26 +3,28 @@ import { BannerLayer } from "react-scroll-parallax/dist/components/ParallaxBanne
 
 import starrySky from "../img/starry-sky.jpg";
 import earth from "../img/earth.png";
+import DoubleArrow from "./DoubleArrow";
 
 export default function Banner() {
   const background: BannerLayer = {
     image: `${starrySky}`,
     translateY: [0, 50],
     opacity: [1, 0.7],
-    scale: [1.05, 1, "easeOutCubic"],
+    scale: [1.1, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
   };
 
   const headline: BannerLayer = {
     translateY: [0, 30],
-    scale: [1, 1.05, "easeOutCubic"],
+    scale: [1, 1.2, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="font-sans font-light text-[50px] mt-36 text-white md:text-[80px] md:mt-28 ">
           Global Warming
         </h1>
+        <DoubleArrow />
       </div>
     ),
   };
@@ -45,7 +47,7 @@ export default function Banner() {
 
   return (
     <ParallaxBanner
-      layers={[background, headline, foreground, gradientOverlay]}
+      layers={[background, foreground, gradientOverlay, headline]}
       className="h-screen"
     />
   );

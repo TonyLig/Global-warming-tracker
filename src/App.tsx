@@ -7,7 +7,10 @@ export default function App() {
     <>
       <ParallaxProvider>
         <Banner />
-        <div className="h-screen flex items-center justify-center">
+        <div
+          className="h-screen flex items-center justify-center"
+          id="card-section"
+        >
           <h1 className="headline gray">Goodnight.</h1>
         </div>
       </ParallaxProvider>
