@@ -2,7 +2,7 @@ export default function DoubleArrow() {
   return (
     <a href="#card-section" className="pointer-events-auto">
       <svg
-        className="fill-white animate-bounce mt-2"
+        className="mt-2 animate-bounce fill-white"
         viewBox="0 -960 960 960"
         width="80"
       >

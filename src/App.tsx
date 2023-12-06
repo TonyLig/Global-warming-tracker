@@ -10,7 +10,10 @@ export default function App() {
     <>
       <ParallaxProvider>
         <Banner />
-        <div className="h-screen grid grid-cols-4 gap-4" id="card-section">
+        <div
+          id="card-section"
+          className="flex flex-col items-center gap-4 pt-2 "
+        >
           <Card
             pageLink=""
             imageCard={temperature}

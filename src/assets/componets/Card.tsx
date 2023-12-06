@@ -12,15 +12,15 @@ export default function Card({
   titleCard,
 }: Props) {
   return (
-    <div className=" rounded-xl shadow-lg shadow-neutral-900 md:shadow-xl md:shadow-neutral-900  relative overflow-hidden bg-cover bg-no-repeat">
+    <div className=" relative h-52 w-80 overflow-hidden rounded-xl bg-cover  bg-no-repeat shadow-lg shadow-neutral-900 md:shadow-xl md:shadow-neutral-900">
       <img
-        className="rounded-xl"
+        className="h-56 rounded-xl"
         src={imageCard}
         alt={accessibilityDescription}
       />
       <a href={pageLink}>
-        <div className="flex items-center justify-center absolute inset-0 h-full w-full overflow-hidden backdrop-blur-md bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
-          <h1 className="text-3xl text-slate-100 text font-sans font-bold p-4 rounded-xl">
+        <div className="absolute inset-0 flex h-56 w-80 items-center justify-center overflow-hidden bg-fixed opacity-0 backdrop-blur-md transition duration-300 ease-in-out hover:opacity-100">
+          <h1 className="text rounded-xl p-4 font-sans text-3xl font-bold text-slate-100">
             {titleCard}
           </h1>
         </div>

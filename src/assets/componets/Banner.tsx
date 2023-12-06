@@ -21,7 +21,7 @@ export default function Banner() {
     expanded: false,
     children: (
       <div className="flex flex-col items-center justify-center">
-        <h1 className="font-sans font-light text-[50px] mt-36 text-white md:text-[80px] md:mt-28 ">
+        <h1 className="mt-36 font-sans text-[50px] font-light text-white md:mt-28 md:text-[80px] ">
           Global Warming
         </h1>
         <DoubleArrow />
@@ -41,7 +41,7 @@ export default function Banner() {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-white h-screen" />
+      <div className="inset-0 h-screen bg-gradient-to-b from-transparent via-transparent via-70% to-white" />
     ),
   };
 
