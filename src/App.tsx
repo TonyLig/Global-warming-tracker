@@ -4,6 +4,11 @@ import "./App.css";
 import Banner from "./assets/componets/Banner";
 import Card from "./assets/componets/Card";
 import temperature from ".//assets/img/high-temperatures.jpg";
+import co2 from ".//assets/img/co2.jpg";
+import ice from ".//assets/img/ice.jpg";
+import methane from ".//assets/img/methane.jpg";
+import nitrous from ".//assets/img/nitrous.jpg";
+import home from ".//assets/img/home.jpg";
 
 export default function App() {
   return (
@@ -12,7 +17,8 @@ export default function App() {
         <Banner />
         <div
           id="card-section"
-          className="flex flex-col items-center gap-4 pt-2 "
+          className=" flex h-full flex-col
+           items-center gap-4 pt-1 md:grid md:h-screen md:grid-flow-row-dense md:grid-cols-2 md:p-20 lg:grid lg:h-screen lg:grid-flow-row-dense lg:grid-cols-3 lg:p-20"
         >
           <Card
             pageLink=""
@@ -22,27 +28,33 @@ export default function App() {
           />
           <Card
             pageLink=""
-            imageCard={temperature}
-            titleCard="TEMPERATURE"
-            accessibilityDescription="image of the sun"
+            imageCard={co2}
+            titleCard="Co2"
+            accessibilityDescription="clouds of smog"
           />
           <Card
             pageLink=""
-            imageCard={temperature}
-            titleCard="TEMPERATURE"
-            accessibilityDescription="image of the sun"
+            imageCard={nitrous}
+            titleCard="NITROUS"
+            accessibilityDescription="nitrous cylinder"
           />
           <Card
             pageLink=""
-            imageCard={temperature}
-            titleCard="TEMPERATURE"
-            accessibilityDescription="image of the sun"
+            imageCard={methane}
+            titleCard="METHANE"
+            accessibilityDescription="flame"
           />
           <Card
             pageLink=""
-            imageCard={temperature}
-            titleCard="TEMPERATURE"
-            accessibilityDescription="image of the sun"
+            imageCard={ice}
+            titleCard="ICE"
+            accessibilityDescription="ice cubes"
+          />
+          <Card
+            pageLink=""
+            imageCard={home}
+            titleCard="HOME"
+            accessibilityDescription="picture of a doormat"
           />
         </div>
       </ParallaxProvider>
