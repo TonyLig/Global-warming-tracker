@@ -14,7 +14,9 @@ export default function App() {
   return (
     <>
       <ParallaxProvider>
-        <Banner />
+        <div id="banner-section">
+          <Banner />
+        </div>
         <div
           id="card-section"
           className=" flex h-full flex-col
@@ -51,7 +53,7 @@ export default function App() {
             accessibilityDescription="ice cubes"
           />
           <Card
-            pageLink=""
+            pageLink="#banner-section"
             imageCard={home}
             titleCard="HOME"
             accessibilityDescription="picture of a doormat"
