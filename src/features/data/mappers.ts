@@ -9,20 +9,23 @@ import {
   Arctic,
   ExtMethane,
   Methane,
-} from "./types";
+} from "types";
 
 export function transformMyTemps(data: ExtTemp): Temp {
   return {
-    ...data,
+    time: Number(data.time),
+    station: Number(data.station),
+    land: Number(data.land),
   };
 }
 
 export function transformMyCO2(data: ExtCO2): CO2 {
+  const year = Number(data.year);
+  const month = Number(data.month);
+  const day = Number(data.day);
   return {
     ...data,
-    year: Number(data.year),
-    month: Number(data.month),
-    day: Number(data.day),
+    date: new Date(year, month, day).toISOString(),
   };
 }
 

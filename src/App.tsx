@@ -1,83 +1,42 @@
-import { ParallaxProvider } from "react-scroll-parallax";
+import React from "react";
+
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
 
-import { requestData } from "./assets/redux/asyncActions";
 import "./App.css";
-import Banner from "./assets/componets/Banner";
-import Card from "./assets/componets/Card";
-import temperature from ".//assets/img/high-temperatures.jpg";
-import carbon from ".//assets/img/co2.jpg";
-import ice from ".//assets/img/ice.jpg";
-import methane from ".//assets/img/methane.jpg";
-import nitrous from ".//assets/img/nitrous.jpg";
-import home from ".//assets/img/home.jpg";
-import * as selectors from "./assets/redux/selectors";
+
+import * as apiDataSelectors from "features/data/selectors";
+import { requestData } from "features/data/asyncActions";
+import Home from "routes/Home";
+import Temperature from "routes/Temperature";
+import Co2 from "routes/CO2";
 
 export default function App() {
   const dispatch = useDispatch();
-  const temps = useSelector(selectors.getTemps);
-  const co2 = useSelector(selectors.getCO2);
-  const error = useSelector(selectors.getError);
-  const pending = useSelector(selectors.getPending);
-  const count = useSelector(selectors.getCount);
+  const error = useSelector(apiDataSelectors.getError);
+  const pending = useSelector(apiDataSelectors.getPending);
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error ts-migrate(2554) FIXME: Expected 1 arguments, but got 0.
     dispatch(requestData());
   }, []);
 
+  if (pending) {
+    return <div>Loading...</div>;
+  } else if (error) {
+    return <div>Error! {error}</div>;
+  }
+
   return (
-    <>
-      <ParallaxProvider>
-        <div id="banner-section">
-          <Banner />
-          total items: {count.totalItems}
-          co2 in december: {count.co2inDecember}
-        </div>
-        <div
-          id="card-section"
-          className=" flex h-full flex-col
-           items-center gap-4 pt-1 md:grid md:h-screen md:grid-flow-row-dense md:grid-cols-2 lg:grid lg:h-screen lg:grid-flow-row-dense lg:grid-cols-3"
-        >
-          <Card
-            pageLink=""
-            imageCard={temperature}
-            titleCard="TEMPERATURE"
-            accessibilityDescription="image of the sun"
-          />
-          <Card
-            pageLink=""
-            imageCard={carbon}
-            titleCard="Co2"
-            accessibilityDescription="clouds of smog"
-          />
-          <Card
-            pageLink=""
-            imageCard={nitrous}
-            titleCard="NITROUS"
-            accessibilityDescription="nitrous cylinder"
-          />
-          <Card
-            pageLink=""
-            imageCard={methane}
-            titleCard="METHANE"
-            accessibilityDescription="flame"
-          />
-          <Card
-            pageLink=""
-            imageCard={ice}
-            titleCard="ICE"
-            accessibilityDescription="ice cubes"
-          />
-          <Card
-            pageLink="#banner-section"
-            imageCard={home}
-            titleCard="HOME"
-            accessibilityDescription="picture of a doormat"
-          />
-        </div>
-      </ParallaxProvider>
-    </>
+    <Routes>
+      <Route path="/" index element={<Home />} />
+      <Route path="/temperature" element={<Temperature />} />
+      <Route path="/co2" element={<Co2 />} />
+      {/* <Route path="/nitrous" component={Nitrous} />
+      <Route path="/methane" component={Methane} />
+      <Route path="/arctic" component={Ice} /> */}
+      <Route path="*" element={<div>Not Found</div>} />
+    </Routes>
   );
 }

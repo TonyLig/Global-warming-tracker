@@ -1,9 +1,9 @@
-import { RootState } from "./store";
+import { RootState } from "store";
 import { createSelector } from "@reduxjs/toolkit";
 
-export const getData = (state: RootState) => state.globalState.data;
-export const getError = (state: RootState) => state.globalState.error;
-export const getPending = (state: RootState) => state.globalState.pending;
+export const getData = (state: RootState) => state.apiData.data;
+export const getError = (state: RootState) => state.apiData.error;
+export const getPending = (state: RootState) => state.apiData.pending;
 
 export const getTemps = createSelector(getData, (data) => data.temps);
 export const getCO2 = createSelector(getData, (data) => data.co2);

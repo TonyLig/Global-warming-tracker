@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
-import { Temp, CO2, NO2, Methane, Arctic } from "./types";
+import { Temp, CO2, NO2, Methane, Arctic } from "types";
+import { requestData } from "./asyncActions";
 
 interface DataCombined {
   temps: Temp[];
@@ -30,34 +30,32 @@ const initialState: AppState = {
 };
 
 export const stateSlice = createSlice({
-  name: "app",
+  name: "apiData",
   initialState,
-  reducers: {
-    requestDataSucceeded: (
-      state: AppState,
-      action: PayloadAction<DataCombined>,
-    ) => {
+  reducers: {},
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(requestData.pending, (state) => ({
+      ...state,
+      pending: true,
+    }));
+
+    builder.addCase(requestData.fulfilled, (state, action) => {
       return {
         ...state,
         data: action.payload,
         pending: false,
       };
-    },
+    });
 
-    requestDataFailed: (state: AppState, action: PayloadAction<string>) => ({
-      ...state,
-      error: action.payload,
-      pending: false,
-    }),
-
-    setPending: (state: AppState) => ({
-      ...state,
-      pending: true,
-    }),
+    builder.addCase(requestData.rejected, (state, action) => {
+      return {
+        ...state,
+        error: action.error.message,
+        pending: false,
+      };
+    });
   },
 });
-
-export const { requestDataSucceeded, requestDataFailed, setPending } =
-  stateSlice.actions;
 
 export default stateSlice.reducer;

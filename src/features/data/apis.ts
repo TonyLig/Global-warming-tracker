@@ -10,14 +10,15 @@ import {
   ExtNO2,
   Arctic,
   ExtArctic,
-} from "./types";
+} from "types";
+
 import {
   transformMyArctic,
   transformMyCO2,
   transformMyMethane,
   transformMyNO2,
   transformMyTemps,
-} from "./dataMappers";
+} from "./mappers";
 
 export async function requestTemps(): Promise<Temp[]> {
   const resp = await axios.get<{ result: ExtTemp[] }>(
