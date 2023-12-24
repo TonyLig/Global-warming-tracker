@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function DoubleArrow() {
   return (
     <a href="#card-section" className="pointer-events-auto">

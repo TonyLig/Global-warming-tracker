@@ -1,8 +1,9 @@
+import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { BannerLayer } from "react-scroll-parallax/dist/components/ParallaxBanner/types";
 
-import starrySky from "../img/starry-sky.jpg";
-import earth from "../img/earth.png";
+import starrySky from "assets/img/starry-sky.jpg";
+import earth from "assets/img/earth.png";
 import DoubleArrow from "./DoubleArrow";
 
 export default function Banner() {
