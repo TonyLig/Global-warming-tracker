@@ -23,7 +23,7 @@ export interface Temp {
 }
 
 export interface CO2 {
-  date: string;
+  year: string;
   cycle: string;
   trend: string;
 }

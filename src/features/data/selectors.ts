@@ -19,7 +19,6 @@ export const getCount = createSelector(
   getArctic,
   (temps, co2, no2, methane, arctic) => {
     return {
-      co2inDecember: co2.filter((item) => item.month === 12).length,
       totalItems: [...temps, ...co2, ...no2, ...methane, ...arctic].length,
     };
   },
