@@ -24,7 +24,7 @@ interface ChartProps<T> {
 
 export default function Chart<T>({ data, lines, xAxis }: ChartProps<T>) {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={300}>
       <LineChart
         data={data}
         margin={{

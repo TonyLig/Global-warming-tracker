@@ -16,11 +16,11 @@ export default function CO2() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center px-2">
         <h1 className="m5 m-5 rounded-2xl border border-black bg-slate-100 p-3 text-xl font-bold shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
           Co2 EMISSION
         </h1>
-        <div className=" container rounded-2xl  border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-900 md:shadow-xl md:shadow-neutral-900">
+        <div className=" container -z-10 rounded-2xl border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
           <Chart data={co2} lines={lines} xAxis="year" />
         </div>
       </div>
