@@ -10,7 +10,7 @@ export default function NavBar() {
   const handeleClick = () => setNav(!nav);
 
   return (
-    <nav className=" flex items-center justify-between border-b border-black bg-slate-100 p-5 drop-shadow-xl ">
+    <nav className="flex items-center justify-between border-b border-black bg-slate-100 p-5 drop-shadow-xl">
       <h1 className="text-2xl">Global Warming</h1>
       <ul className="hidden gap-6 md:flex">
         <Link to={"/temperature"}>
@@ -33,7 +33,7 @@ export default function NavBar() {
         </Link>
       </ul>
       {/* Handle hamburger icon */}
-      <div className="z-20 md:hidden" onClick={handeleClick}>
+      <div className="z-50 md:hidden" onClick={handeleClick}>
         {nav ? (
           <FaTimes size={25} color="white" />
         ) : (
@@ -47,7 +47,7 @@ export default function NavBar() {
           nav
             ? "translate-x-0 transform text-white opacity-100"
             : "-translate-y-full transform opacity-0"
-        } text absolute left-0 top-0 z-10 flex h-screen w-full flex-col items-center justify-center bg-zinc-900/80 text-2xl font-bold transition-transform `}
+        } text absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-900/80 text-2xl font-bold transition-transform `}
         onClick={() => setNav(false)}
       >
         <Link to={"/temperature"}>
