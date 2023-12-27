@@ -14,6 +14,7 @@ interface LineConfig {
   name: string;
   dataKey: string | number;
   color: string;
+  dot: boolean;
 }
 
 interface ChartProps<T> {
@@ -45,6 +46,7 @@ export default function Chart<T>({ data, lines, xAxis }: ChartProps<T>) {
             stroke={line.color}
             name={line.name}
             key={index.toString()}
+            dot={false}
           />
         ))}
       </LineChart>

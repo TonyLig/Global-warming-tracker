@@ -12,7 +12,14 @@ export interface ExtCO2 {
   trend: string;
 }
 
-export interface ExtMethane {}
+export interface ExtMethane {
+  date: string;
+  average: string;
+  trend: string;
+  averageUnc: string;
+  trendUnc: string;
+}
+
 export interface ExtNO2 {}
 export interface ExtArctic {}
 
@@ -26,14 +33,12 @@ export interface CO2 {
   year: string;
   cycle: string;
   trend: string;
+  date: string;
 }
 
 export interface Methane {
-  date: string;
-  average: string;
-  trend: string;
-  averageUnc: string;
-  trendUnc: string;
+  date: number;
+  averageUnc: number;
 }
 
 export interface NO2 {

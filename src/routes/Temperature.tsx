@@ -11,11 +11,13 @@ export default function Temperature() {
       name: "station",
       dataKey: "station" as const,
       color: "#8884d8",
+      dot: false,
     },
     {
       name: "land",
       dataKey: "land" as const,
       color: "#82ca9d",
+      dot: false,
     },
   ];
   return (
@@ -25,7 +27,7 @@ export default function Temperature() {
         <h1 className="m5 m-5 rounded-2xl border border-black bg-slate-100 p-3 text-xl font-bold shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
           TEMPERATURE
         </h1>
-        <div className=" container z-0 rounded-2xl border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
+        <div className=" container rounded-2xl border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
           <Chart data={temps} lines={lines} xAxis="time" />
         </div>
       </div>

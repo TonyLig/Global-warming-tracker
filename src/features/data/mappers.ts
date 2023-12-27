@@ -13,7 +13,7 @@ import {
 
 export function transformMyTemps(data: ExtTemp): Temp {
   return {
-    time: Number(data.time),
+    time: Math.round(Number(data.time)),
     station: Number(data.station),
     land: Number(data.land),
   };
@@ -30,7 +30,10 @@ export function transformMyCO2(data: ExtCO2): CO2 {
 }
 
 export function transformMyMethane(data: ExtMethane): Methane {
-  return data;
+  return {
+    date: Math.round(Number(data.date)),
+    averageUnc: Number(data.averageUnc),
+  };
 }
 export function transformMyNO2(data: ExtNO2): NO2 {
   return data;

@@ -11,6 +11,7 @@ import { requestData } from "features/data/asyncActions";
 import Home from "routes/Home";
 import Temperature from "routes/Temperature";
 import Co2 from "routes/CO2";
+import Methane from "routes/Methane";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ export default function App() {
       <Route path="/" index element={<Home />} />
       <Route path="/temperature" element={<Temperature />} />
       <Route path="/co2" element={<Co2 />} />
+      <Route path="/methane" element={<Methane />} />
       {/* <Route path="/nitrous" component={Nitrous} />
-      <Route path="/methane" component={Methane} />
       <Route path="/arctic" component={Ice} /> */}
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
