@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Temp, CO2, NO2, Methane, Arctic } from "types";
+import { Temp, CO2, NO2, Methane, Arctic } from "./types";
 import { requestData } from "./asyncActions";
 
+// Combined data interface for the app state
 interface DataCombined {
   temps: Temp[];
   co2: CO2[];
@@ -11,12 +12,14 @@ interface DataCombined {
   methane: Methane[];
 }
 
+// Application state interface
 export interface AppState {
   data: DataCombined;
   error: string | null;
   pending: boolean;
 }
 
+// Initial state for the application
 const initialState: AppState = {
   data: {
     temps: [],
@@ -29,12 +32,12 @@ const initialState: AppState = {
   pending: false,
 };
 
+// Creating a Redux slice
 export const stateSlice = createSlice({
   name: "apiData",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(requestData.pending, (state) => ({
       ...state,
       pending: true,

@@ -2,11 +2,14 @@ import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { BannerLayer } from "react-scroll-parallax/dist/components/ParallaxBanner/types";
 
+// Importing assets and components
 import starrySky from "assets/img/starry-sky.jpg";
 import earth from "assets/img/earth.png";
 import DoubleArrow from "./DoubleArrow";
 
+// Banner component displaying a parallax banner
 export default function Banner() {
+  // Configuration for the background layer
   const background: BannerLayer = {
     image: `${starrySky}`,
     translateY: [0, 50],
@@ -15,6 +18,7 @@ export default function Banner() {
     shouldAlwaysCompleteAnimation: true,
   };
 
+  // Configuration for the headline layer
   const headline: BannerLayer = {
     translateY: [0, 30],
     scale: [1, 1.2, "easeOutCubic"],
@@ -30,6 +34,7 @@ export default function Banner() {
     ),
   };
 
+  // Configuration for the foreground layer
   const foreground: BannerLayer = {
     image: `${earth}`,
     translateY: [0, 15],
@@ -37,6 +42,7 @@ export default function Banner() {
     shouldAlwaysCompleteAnimation: true,
   };
 
+  // Configuration for the gradient overlay layer
   const gradientOverlay: BannerLayer = {
     opacity: [0, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,

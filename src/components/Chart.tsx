@@ -10,12 +10,15 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// Configuration interface for individual lines in the chart
 interface LineConfig {
   name: string;
   dataKey: string | number;
   color: string;
+  dot: boolean;
 }
 
+// Props interface for the Chart component
 interface ChartProps<T> {
   data: T[];
   lines: LineConfig[];
@@ -45,6 +48,7 @@ export default function Chart<T>({ data, lines, xAxis }: ChartProps<T>) {
             stroke={line.color}
             name={line.name}
             key={index.toString()}
+            dot={false}
           />
         ))}
       </LineChart>
