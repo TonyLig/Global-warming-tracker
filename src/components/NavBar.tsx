@@ -19,13 +19,13 @@ export default function NavBar() {
         <Link to={"/co2"}>
           <li>Co2</li>
         </Link>
-        <Link to={"/nitous"}>
+        <Link to={"/nitrous"}>
           <li>Nitrous</li>
         </Link>
         <Link to={"/methane"}>
           <li>Methane</li>
         </Link>
-        <Link to={"/artic"}>
+        <Link to={"/arctic"}>
           <li>Artic ICE</li>
         </Link>
         <Link to={"/"}>
@@ -56,13 +56,13 @@ export default function NavBar() {
         <Link to={"/co2"}>
           <li className="p-2 hover:text-blue-700">Co2</li>
         </Link>
-        <Link to={"/nitous"}>
+        <Link to={"/nitrous"}>
           <li className="p-2 hover:text-blue-700">Nitrous</li>
         </Link>
         <Link to={"/methane"}>
           <li className="p-2 hover:text-blue-700">Methane</li>
         </Link>
-        <Link to={"/artic"}>
+        <Link to={"/arctic"}>
           <li className="p-2 hover:text-blue-700">Artic ICE</li>
         </Link>
         <Link to={"/"}>

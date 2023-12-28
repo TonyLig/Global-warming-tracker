@@ -12,6 +12,8 @@ import Home from "routes/Home";
 import Temperature from "routes/Temperature";
 import Co2 from "routes/CO2";
 import Methane from "routes/Methane";
+import Nitrous from "routes/Nitrous";
+import Arctic from "routes/Arctic";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -35,8 +37,8 @@ export default function App() {
       <Route path="/temperature" element={<Temperature />} />
       <Route path="/co2" element={<Co2 />} />
       <Route path="/methane" element={<Methane />} />
-      {/* <Route path="/nitrous" component={Nitrous} />
-      <Route path="/arctic" component={Ice} /> */}
+      <Route path="/nitrous" element={<Nitrous />} />
+      <Route path="/arctic" element={<Arctic />} />
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
   );

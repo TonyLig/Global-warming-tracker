@@ -36,7 +36,7 @@ export default function Home() {
             accessibilityDescription="clouds of smog"
           />
           <Card
-            pageLink="no2"
+            pageLink="nitrous"
             imageCard={nitrous}
             titleCard="NITROUS"
             accessibilityDescription="nitrous cylinder"
@@ -54,7 +54,7 @@ export default function Home() {
             accessibilityDescription="ice cubes"
           />
           <Card
-            pageLink="#banner-section"
+            pageLink="/"
             imageCard={home}
             titleCard="HOME"
             accessibilityDescription="picture of a doormat"

@@ -20,8 +20,24 @@ export interface ExtMethane {
   trendUnc: string;
 }
 
-export interface ExtNO2 {}
-export interface ExtArctic {}
+export interface ExtNO2 {
+  date: string;
+  average: string;
+  trend: string;
+  averageUnc: string;
+  trendUnc: string;
+}
+
+export interface ExtArctic {
+  Column1: number;
+  year: number;
+  month: number;
+  ["data-type"]: string;
+  hemisphere: string;
+  extent: number;
+  area: number;
+  rank: number;
+}
 
 export interface Temp {
   time: number;
@@ -38,24 +54,17 @@ export interface CO2 {
 
 export interface Methane {
   date: number;
-  averageUnc: number;
+  average: number;
+  trend: number;
 }
 
 export interface NO2 {
-  date: string;
-  average: string;
-  trend: string;
-  averageUnc: string;
-  trendUnc: string;
+  date: number;
+  average: number;
 }
 
 export interface Arctic {
-  Column1: number;
   year: number;
   month: number;
-  ["data-type"]: string;
-  hemisphere: string;
-  extent: number;
-  area: number;
   rank: number;
 }

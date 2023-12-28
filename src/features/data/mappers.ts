@@ -32,12 +32,22 @@ export function transformMyCO2(data: ExtCO2): CO2 {
 export function transformMyMethane(data: ExtMethane): Methane {
   return {
     date: Math.round(Number(data.date)),
-    averageUnc: Number(data.averageUnc),
+    average: Number(data.average),
+    trend: Number(data.trend),
   };
 }
+
 export function transformMyNO2(data: ExtNO2): NO2 {
-  return data;
+  return {
+    date: Math.round(Number(data.date)),
+    average: Number(data.average),
+  };
 }
+
 export function transformMyArctic(data: ExtArctic): Arctic {
-  return data;
+  return {
+    year: data.year,
+    month: data.month,
+    rank: data.rank,
+  };
 }
