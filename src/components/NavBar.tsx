@@ -4,9 +4,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 
 export default function NavBar() {
-  // Nav is starting off false
+  // State to handle mobile navigation visibility
   const [nav, setNav] = useState(false);
 
+  // Function to toggle mobile navigation visibility
   const handeleClick = () => setNav(!nav);
 
   return (
@@ -26,12 +27,13 @@ export default function NavBar() {
           <li>Methane</li>
         </Link>
         <Link to={"/arctic"}>
-          <li>Artic ICE</li>
+          <li>Arctic ICE</li>
         </Link>
         <Link to={"/"}>
           <li>Home</li>
         </Link>
       </ul>
+
       {/* Handle hamburger icon */}
       <div className="z-20 md:hidden" onClick={handeleClick}>
         {nav ? (
@@ -63,7 +65,7 @@ export default function NavBar() {
           <li className="p-2 hover:text-blue-700">Methane</li>
         </Link>
         <Link to={"/arctic"}>
-          <li className="p-2 hover:text-blue-700">Artic ICE</li>
+          <li className="p-2 hover:text-blue-700">Arctic ICE</li>
         </Link>
         <Link to={"/"}>
           <li className="p-2 hover:text-blue-700">Home</li>

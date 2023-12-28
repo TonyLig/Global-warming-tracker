@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// Configuration interface for individual lines in the chart
 interface LineConfig {
   name: string;
   dataKey: string | number;
@@ -17,6 +18,7 @@ interface LineConfig {
   dot: boolean;
 }
 
+// Props interface for the Chart component
 interface ChartProps<T> {
   data: T[];
   lines: LineConfig[];

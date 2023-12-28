@@ -1,5 +1,6 @@
 import React from "react";
 
+// Component to display a double arrow pointing downwards
 export default function DoubleArrow() {
   return (
     <a href="#card-section" className="pointer-events-auto">

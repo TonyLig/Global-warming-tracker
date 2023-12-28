@@ -2,10 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { getTemps } from "features/data/selectors";
 import Chart from "components/Chart";
-import NavBar from "components/NavBar";
 
 export default function Temperature() {
+  // Fetching temperature data using Redux selector
   const temps = useSelector(getTemps);
+
+  // Configuration for the chart lines
   const lines = [
     {
       name: "station",
@@ -20,17 +22,15 @@ export default function Temperature() {
       dot: false,
     },
   ];
+
   return (
-    <>
-      <NavBar />
-      <div className="flex flex-col items-center  justify-center px-2">
-        <h1 className="m5 m-5 rounded-2xl border border-black bg-slate-100 p-3 text-xl font-bold shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
-          TEMPERATURE
-        </h1>
-        <div className=" container rounded-2xl border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
-          <Chart data={temps} lines={lines} xAxis="time" />
-        </div>
+    <div className="flex flex-col items-center  justify-center px-2">
+      <h1 className="m5 m-5 rounded-2xl border border-black bg-slate-100 p-3 text-xl font-bold shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
+        TEMPERATURE
+      </h1>
+      <div className=" container rounded-2xl border border-black bg-slate-100 p-5 shadow-lg shadow-neutral-500 md:shadow-xl md:shadow-neutral-500">
+        <Chart data={temps} lines={lines} xAxis="time" />
       </div>
-    </>
+    </div>
   );
 }

@@ -9,8 +9,9 @@ import {
   Arctic,
   ExtMethane,
   Methane,
-} from "types";
+} from "./types";
 
+// START Function to transform external data to the desired format
 export function transformMyTemps(data: ExtTemp): Temp {
   return {
     time: Math.round(Number(data.time)),

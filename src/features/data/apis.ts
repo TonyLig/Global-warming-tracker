@@ -10,8 +10,9 @@ import {
   ExtNO2,
   Arctic,
   ExtArctic,
-} from "types";
+} from "./types";
 
+// Importing transformation functions for data mapping
 import {
   transformMyArctic,
   transformMyCO2,
@@ -20,6 +21,7 @@ import {
   transformMyTemps,
 } from "./mappers";
 
+// START function to fetch data and transform it
 export async function requestTemps(): Promise<Temp[]> {
   const resp = await axios.get<{ result: ExtTemp[] }>(
     " https://global-warming.org/api/temperature-api",

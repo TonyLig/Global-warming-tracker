@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import Banner from "components/Banner";
 import Card from "components/Card";
 
+// Import images
 import temperature from "assets/img/high-temperatures.jpg";
 import carbon from "assets/img/co2.jpg";
 import ice from "assets/img/ice.jpg";
@@ -12,6 +13,19 @@ import nitrous from "assets/img/nitrous.jpg";
 import home from "assets/img/home.jpg";
 
 export default function Home() {
+  const [clickedElementId, setClickedElementId] = useState(null);
+
+  // Effect to scroll to banner section when clicked
+  useEffect(() => {
+    if (clickedElementId === "banner-section") {
+      const element = document.getElementById(clickedElementId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setClickedElementId(null);
+      }
+    }
+  }, [clickedElementId]);
+
   return (
     <>
       <ParallaxProvider>
@@ -58,6 +72,7 @@ export default function Home() {
             imageCard={home}
             titleCard="HOME"
             accessibilityDescription="picture of a doormat"
+            onClick={() => setClickedElementId("banner-section")}
           />
         </div>
       </ParallaxProvider>

@@ -1,21 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Props interface for the Card component
 interface Props {
   imageCard: string;
   pageLink: string;
   accessibilityDescription: string;
   titleCard: string;
+  onClick?: () => void;
 }
 
+// Card component to display an image with a title and navigate to a link
 export default function Card({
   imageCard,
   pageLink,
   accessibilityDescription,
   titleCard,
+  onClick,
 }: Props) {
   return (
-    <Link to={pageLink}>
+    <Link to={pageLink} onClick={onClick}>
       <div className=" relative mx-auto h-52 w-80 overflow-hidden rounded-xl  bg-cover bg-no-repeat shadow-lg shadow-neutral-900 md:shadow-xl md:shadow-neutral-900">
         <img
           className="h-52 w-80 rounded-xl object-cover"

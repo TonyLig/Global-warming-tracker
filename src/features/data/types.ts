@@ -1,3 +1,4 @@
+// START external data interface
 export interface ExtTemp {
   time: string;
   station: string;
@@ -38,7 +39,9 @@ export interface ExtArctic {
   area: number;
   rank: number;
 }
+// END exsternal data interface
 
+// START transformed data interface
 export interface Temp {
   time: number;
   station: number;
@@ -68,3 +71,4 @@ export interface Arctic {
   month: number;
   rank: number;
 }
+// END transformed data interface
