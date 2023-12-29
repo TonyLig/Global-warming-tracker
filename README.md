@@ -34,7 +34,7 @@ To run Food-Footprint on your local machine, follow these steps:
 
 ## Live Demo
 
-Check out the live demo of Mindful at: [Quiz Food Footprint](https://quiz-food-footprint.vercel.app/)
+Check out the live demo of Mindful at: [Global warming tracker](https://global-warming-tracker.vercel.app/)
 
 ## Technologies Used
 
