@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route, Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // Importing selectors and asynchronous action
 import * as apiDataSelectors from "features/data/selectors";
@@ -54,25 +55,32 @@ export default function App() {
 
   // Main application routes
   return (
-    <Routes>
-      <Route path="/">
-        <Route index element={<Home />} />
-        <Route element={<WithNavbar />}>
-          <Route path="temperature" element={<Temperature />} />
-          <Route path="co2" element={<Co2 />} />
-          <Route path="methane" element={<Methane />} />
-          <Route path="nitrous" element={<Nitrous />} />
-          <Route path="arctic" element={<Arctic />} />
+    <>
+      <Helmet htmlAttributes>
+        <title>Global Warming</title>
+        <meta name="golabal warming" content="global warming" />
+      </Helmet>
+
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route element={<WithNavbar />}>
+            <Route path="temperature" element={<Temperature />} />
+            <Route path="co2" element={<Co2 />} />
+            <Route path="methane" element={<Methane />} />
+            <Route path="nitrous" element={<Nitrous />} />
+            <Route path="arctic" element={<Arctic />} />
+          </Route>
         </Route>
-      </Route>
-      <Route
-        path="*"
-        element={
-          <div className="flex h-screen items-center justify-center">
-            <h1 className="text-4xl">Not Found</h1>
-          </div>
-        }
-      />
-    </Routes>
+        <Route
+          path="*"
+          element={
+            <div className="flex h-screen items-center justify-center">
+              <h1 className="text-4xl">Not Found</h1>
+            </div>
+          }
+        />
+      </Routes>
+    </>
   );
 }
