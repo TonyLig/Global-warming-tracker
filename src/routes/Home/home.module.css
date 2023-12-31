@@ -1,0 +1,4 @@
+.container {
+  @apply flex h-full flex-col
+  items-center gap-4 pt-1 md:grid md:h-screen md:grid-flow-row-dense md:grid-cols-2 lg:grid lg:h-screen lg:grid-flow-row-dense lg:grid-cols-3;
+}

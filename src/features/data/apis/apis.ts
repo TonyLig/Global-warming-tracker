@@ -10,7 +10,7 @@ import {
   ExtNO2,
   Arctic,
   ExtArctic,
-} from "./types";
+} from "../types/types";
 
 // Importing transformation functions for data mapping
 import {
@@ -19,7 +19,7 @@ import {
   transformMyMethane,
   transformMyNO2,
   transformMyTemps,
-} from "./mappers";
+} from "../mappers/mappers";
 
 // START function to fetch data and transform it
 export async function requestTemps(): Promise<Temp[]> {

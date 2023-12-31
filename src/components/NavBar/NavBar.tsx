@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 
+import styles from "./navBar.module.css";
+
 export default function NavBar() {
   // State to handle mobile navigation visibility
   const [nav, setNav] = useState(false);
@@ -11,9 +13,9 @@ export default function NavBar() {
   const handeleClick = () => setNav(!nav);
 
   return (
-    <nav className=" relative z-10 flex items-center justify-between border-b border-black bg-slate-100 p-5 drop-shadow-xl">
-      <h1 className="text-2xl">Global Warming</h1>
-      <ul className="hidden gap-6 md:flex">
+    <nav className={styles.global_nav}>
+      <h1 className={styles.nav_title}>Global Warming</h1>
+      <ul className={styles.main_list}>
         <Link to={"/temperature"}>
           <li>Temperature</li>
         </Link>
@@ -35,7 +37,7 @@ export default function NavBar() {
       </ul>
 
       {/* Handle hamburger icon */}
-      <div className="z-20 md:hidden" onClick={handeleClick}>
+      <div className={styles.burger_icon} onClick={handeleClick}>
         {nav ? (
           <FaTimes size={25} color="white" />
         ) : (
@@ -53,22 +55,22 @@ export default function NavBar() {
         onClick={() => setNav(false)}
       >
         <Link to={"/temperature"}>
-          <li className="p-2 hover:text-blue-700">Temperature</li>
+          <li className={styles.mobile_list}>Temperature</li>
         </Link>
         <Link to={"/co2"}>
-          <li className="p-2 hover:text-blue-700">Co2</li>
+          <li className={styles.mobile_list}>Co2</li>
         </Link>
         <Link to={"/nitrous"}>
-          <li className="p-2 hover:text-blue-700">Nitrous</li>
+          <li className={styles.mobile_list}>Nitrous</li>
         </Link>
         <Link to={"/methane"}>
-          <li className="p-2 hover:text-blue-700">Methane</li>
+          <li className={styles.mobile_list}>Methane</li>
         </Link>
         <Link to={"/arctic"}>
-          <li className="p-2 hover:text-blue-700">Arctic ICE</li>
+          <li className={styles.mobile_list}>Arctic ICE</li>
         </Link>
         <Link to={"/"}>
-          <li className="p-2 hover:text-blue-700">Home</li>
+          <li className={styles.mobile_list}>Home</li>
         </Link>
       </ul>
     </nav>

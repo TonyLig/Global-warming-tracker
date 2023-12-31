@@ -5,7 +5,8 @@ import { BannerLayer } from "react-scroll-parallax/dist/components/ParallaxBanne
 // Importing assets and components
 import starrySky from "assets/img/starry-sky.jpg";
 import earth from "assets/img/earth.png";
-import DoubleArrow from "./DoubleArrow";
+import DoubleArrow from "../DoubleArrow/DoubleArrow";
+import styles from "./banner.module.css";
 
 // Banner component displaying a parallax banner
 export default function Banner() {
@@ -25,10 +26,8 @@ export default function Banner() {
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
     children: (
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="mt-36 font-sans text-[50px] font-light text-white md:mt-28 md:text-[80px] ">
-          Global Warming
-        </h1>
+      <div className={styles.headline}>
+        <h1 className={styles.headline__title}>Global Warming</h1>
         <DoubleArrow />
       </div>
     ),
@@ -47,15 +46,13 @@ export default function Banner() {
     opacity: [0, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     expanded: false,
-    children: (
-      <div className="inset-0 h-screen bg-gradient-to-b from-transparent via-transparent via-70% to-white" />
-    ),
+    children: <div className={styles.gradient} />,
   };
 
   return (
     <ParallaxBanner
       layers={[background, foreground, gradientOverlay, headline]}
-      className="h-screen"
+      className={styles.screen}
     />
   );
 }

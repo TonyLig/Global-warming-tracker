@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-import Banner from "components/Banner";
-import Card from "components/Card";
+import Banner from "components/Banner/Banner";
+import Card from "components/Card/Card";
 
 // Import images
 import temperature from "assets/img/high-temperatures.jpg";
@@ -11,6 +11,7 @@ import ice from "assets/img/ice.jpg";
 import methane from "assets/img/methane.jpg";
 import nitrous from "assets/img/nitrous.jpg";
 import home from "assets/img/home.jpg";
+import styles from "./home.module.css";
 
 export default function Home() {
   const [clickedElementId, setClickedElementId] = useState(null);
@@ -32,11 +33,7 @@ export default function Home() {
         <div id="banner-section">
           <Banner />
         </div>
-        <div
-          id="card-section"
-          className=" flex h-full flex-col
-           items-center gap-4 pt-1 md:grid md:h-screen md:grid-flow-row-dense md:grid-cols-2 lg:grid lg:h-screen lg:grid-flow-row-dense lg:grid-cols-3"
-        >
+        <div id="card-section" className={styles.container}>
           <Card
             pageLink="temperature"
             imageCard={temperature}
