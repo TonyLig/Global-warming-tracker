@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Temp, CO2, NO2, Methane, Arctic } from "./types";
-import { requestData } from "./asyncActions";
+import { Temp, CO2, NO2, Methane, Arctic } from "../types/types";
+import { requestData } from "../apis/asyncActions";
 
 // Combined data interface for the app state
 interface DataCombined {

@@ -1,0 +1,19 @@
+.global_nav {
+  @apply relative z-10 flex items-center justify-between border-b border-black bg-slate-100 p-5 drop-shadow-xl;
+}
+
+.nav_title {
+  @apply text-2xl;
+}
+
+.main_list {
+  @apply hidden gap-6 md:flex;
+}
+
+.burger_icon {
+  @apply z-20 md:hidden;
+}
+
+.mobile_list {
+  @apply p-2 hover:text-blue-700;
+}

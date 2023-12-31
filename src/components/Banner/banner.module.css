@@ -1,0 +1,15 @@
+.headline {
+  @apply flex flex-col items-center justify-center;
+}
+
+.headline__title {
+  @apply mt-36 font-sans text-[50px] font-light text-white md:mt-28 md:text-[80px];
+}
+
+.gradient {
+  @apply inset-0 h-screen bg-gradient-to-b from-transparent via-transparent via-70% to-white;
+}
+
+.screen {
+  @apply h-screen;
+}

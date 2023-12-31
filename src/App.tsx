@@ -6,17 +6,17 @@ import { Helmet } from "react-helmet";
 import { Circles } from "react-loader-spinner";
 
 // Importing selectors and asynchronous action
-import * as apiDataSelectors from "features/data/selectors";
-import { requestData } from "features/data/asyncActions";
+import * as apiDataSelectors from "features/data/slices/selectors";
+import { requestData } from "features/data/apis/asyncActions";
 
 // Importing route components
-import Home from "routes/Home";
-import Temperature from "routes/Temperature";
-import Co2 from "routes/CO2";
-import Methane from "routes/Methane";
-import Nitrous from "routes/Nitrous";
-import Arctic from "routes/Arctic";
-import NavBar from "components/NavBar";
+import Home from "routes/Home/Home";
+import Temperature from "routes/Temperature/Temperature";
+import Co2 from "routes/CO2/CO2";
+import Methane from "routes/Methane/Methane";
+import Nitrous from "routes/Nitrous/Nitrous";
+import Arctic from "routes/Arctic/Arctic";
+import NavBar from "components/NavBar/NavBar";
 
 // Component to wrap routes with a navigation bar
 function WithNavbar() {
