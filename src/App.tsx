@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Circles } from "react-loader-spinner";
 
 // Importing selectors and asynchronous action
 import * as apiDataSelectors from "features/data/selectors";
@@ -42,7 +43,15 @@ export default function App() {
   if (pending) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <h1 className="text-4xl">Loading...</h1>
+        <Circles
+          height="80"
+          width="80"
+          color="#0067A3"
+          ariaLabel="circles-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
       </div>
     );
   } else if (error) {
@@ -59,6 +68,7 @@ export default function App() {
       <Helmet htmlAttributes>
         <title>Global Warming</title>
         <meta name="golabal warming" content="global warming" />
+        <link rel="icon" href="/favicon.ico"></link>
       </Helmet>
 
       <Routes>
