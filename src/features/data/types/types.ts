@@ -31,14 +31,9 @@ export interface ExtNO2 {
 
 export interface ExtArctic {
   data : {
-    Column1: number;
-    year: number;
-    month: number;
-    ["data-type"]: string;
-    hemisphere: string;
-    extent: number;
-    area: number;
-    rank: number;
+    arcticData : {
+      data : any; // TO DO
+    }
   }
 }
 // END exsternal data interface

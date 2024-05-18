@@ -51,7 +51,7 @@ export async function requestNO2(): Promise<NO2[]> {
 }
 
 export async function requestArctic(): Promise<Arctic[]> {
-  const resp = await axios.get<{ arcticData: ExtArctic[] }>(
+  const resp = await axios.get<{ arcticData: ExtArctic }>(
     " https://global-warming.org/api/arctic-api",
   );
   return Object.keys(resp.data.arcticData.data).map(key => { 
