@@ -30,11 +30,9 @@ export interface ExtNO2 {
 }
 
 export interface ExtArctic {
-  data : {
-    arcticData : {
-      data : any; // TO DO
-    }
-  }
+  year: number;
+  month: number;
+  rank: number;
 }
 // END exsternal data interface
 
